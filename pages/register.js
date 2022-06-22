@@ -2,7 +2,7 @@ import { useState } from "react";
 import { set, useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 
-function login() {
+function Register() {
   const {
     register,
     handleSubmit,
@@ -85,4 +85,4 @@ function login() {
   );
 }
 
-export default login;
+export default Register;

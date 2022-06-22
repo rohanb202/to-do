@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
 import { userState } from "../atoms/userAtom";
 import { tagsData } from "../atoms/tagsAtom";
 
-function login() {
+function Login() {
   const {
     register,
     handleSubmit,
@@ -88,4 +88,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;
