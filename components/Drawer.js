@@ -15,7 +15,7 @@ import {
   DocumentReportIcon,
   BookOpenIcon,
 } from "@heroicons/react/outline";
-import Tag from "./tag";
+import Tag from "./Tag";
 import { useForm } from "react-hook-form";
 import { usersEntries } from "../atoms/adminAtom";
 import { tagsState } from "../atoms/tagsAtom";
