@@ -69,19 +69,24 @@ export default function Home() {
       fetchTags();
     }
   }, [tagState]);
+
   return (
     <div className="overflow-hidden">
       <Head>
         <title>To Do</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Navbar />
-      <hr />
-      <div className="flex h-[90vh] ">
-        <DrawerPanel />
-        {user?.isAdmin ? <AdminMain /> : <Main tasksData={tasks} />}
-      </div>
-      <ModalForm />
+      {user && (
+        <div>
+          <Navbar />
+          <hr />
+          <div className="flex h-[90vh] ">
+            <DrawerPanel />
+            {user?.isAdmin ? <AdminMain /> : <Main tasksData={tasks} />}
+          </div>
+          <ModalForm />
+        </div>
+      )}
     </div>
   );
 }
