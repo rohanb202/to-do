@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
 import { userState } from "../atoms/userAtom";
 import { tagsData } from "../atoms/tagsAtom";
+import Head from "next/head";
 
 function Login() {
   const {
@@ -38,6 +39,10 @@ function Login() {
   };
   return (
     <div className="w-screen h-screen">
+      <Head>
+        <title>To Do | Login</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="absolute inset-0 h-[60vh] w-[50vw] min-h-[400px] min-w-[300px] max-w-[450px] flex flex-col items-center justify-center m-auto rounded-lg shadow-lg">
         <h1 className="py-5 text-3xl font-semibold">Log In</h1>
         <form
@@ -74,7 +79,7 @@ function Login() {
           </div>
         </form>
         <h1>
-          Don&apos;t have account yet?{" "}
+          Don&apos;t have an account yet?{" "}
           <button
             className="py-2 text-blue-400"
             onClick={() => router.push("/register")}

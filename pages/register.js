@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { set, useForm } from "react-hook-form";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 function Register() {
   const {
@@ -33,6 +34,10 @@ function Register() {
   };
   return (
     <div className="w-screen h-screen">
+      <Head>
+        <title>To Do | Register</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="absolute inset-0  w-[50vw] h-[65vh]  min-w-[300px] max-w-[450px] flex flex-col items-center justify-center m-auto rounded-lg shadow-lg">
         <h1 className="py-5 text-3xl font-semibold">Register</h1>
         <form
@@ -79,6 +84,15 @@ function Register() {
             </button>
           </div>
         </form>
+        <h1>
+          Already have an account?{" "}
+          <button
+            className="py-2 text-blue-400"
+            onClick={() => router.push("/login")}
+          >
+            Log In
+          </button>
+        </h1>
         {msg && <h1 className="pt-2 text-red-500">{msg}</h1>}
       </div>
     </div>
