@@ -1,4 +1,162 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# To Do App
+
+A simple to do app where user can add their tasks,mark them completed and can delete the tasks as well.
+This project is build on ⚡Next JS,uses 💫mongoDB as backend and houses ⭐TailwindCSS + Material UI.
+
+## API Reference
+
+#### Login
+
+```http
+  POST /api/auth/login
+```
+
+| Body       | Type     | Description   |
+| :--------- | :------- | :------------ |
+| `email `   | `string` | **Required**. |
+| `password` | `string` | **Required**. |
+
+#### Register
+
+```http
+  POST /api/auth/register
+```
+
+| Body       | Type     | Description   |
+| :--------- | :------- | :------------ |
+| `name`     | `string` | **Required**. |
+| `email`    | `string` | **Required**. |
+| `password` | `string` | **Required**. |
+
+#### Tasks
+
+```http
+  GET /api/me/tasks
+```
+
+To get the tasks of the current user.
+
+| Headers         | Type            | Description   |
+| :-------------- | :-------------- | :------------ |
+| `Authorization` | ` Bearer Token` | **Required**. |
+
+```http
+  POST /api/me/tasks
+```
+
+To post the task by the user.
+| Headers | Type | Description |
+| :-------- | :------- | :-------------------------------- |
+| `Authorization` | ` Bearer Token` | **Required**. |
+
+| Body        | Type     | Description   |
+| :---------- | :------- | :------------ |
+| `text`      | `string` | **Required**. |
+| `tag`       | `string` | **Required**. |
+| `dueDate`   | `string` | **Required**. |
+| `createdAt` | `string` | **Required**. |
+
+```http
+  DELETE /api/me/tasks/{id}
+```
+
+To delete the task by the user.
+
+| Headers         | Type            | Description   |
+| :-------------- | :-------------- | :------------ |
+| `Authorization` | ` Bearer Token` | **Required**. |
+
+| Parameter | Type     | Description   |
+| :-------- | :------- | :------------ |
+| `id`      | `string` | **Required**. |
+
+```http
+  PUT /api/me/tasks/{id}
+```
+
+To mark the task completed.
+
+| Headers         | Type            | Description   |
+| :-------------- | :-------------- | :------------ |
+| `Authorization` | ` Bearer Token` | **Required**. |
+
+| Parameter | Type     | Description   |
+| :-------- | :------- | :------------ |
+| `id`      | `string` | **Required**. |
+
+| Body          | Type      | Description   |
+| :------------ | :-------- | :------------ |
+| `isCompleted` | `boolean` | **Required**. |
+
+#### Tags
+
+```http
+  GET /api/me/tags
+```
+
+To get the tags of the user.
+
+| Headers         | Type            | Description   |
+| :-------------- | :-------------- | :------------ |
+| `Authorization` | ` Bearer Token` | **Required**. |
+
+```http
+  POST /api/me/tags
+```
+
+To post the tags by the user.
+
+| Headers         | Type            | Description   |
+| :-------------- | :-------------- | :------------ |
+| `Authorization` | ` Bearer Token` | **Required**. |
+
+| Body  | Type     | Description   |
+| :---- | :------- | :------------ |
+| `tag` | `string` | **Required**. |
+
+#### For Admin use **Only**
+
+```http
+  GET /api/me
+```
+
+To get all the tasks of the users.
+
+| Headers         | Type            | Description   |
+| :-------------- | :-------------- | :------------ |
+| `Authorization` | ` Bearer Token` | **Required**. |
+
+```http
+  GET /api/me/task?from={fromDate}&to={toDate}
+```
+
+To get all the tasks of the users between the fromDate and toDate.
+
+| Headers         | Type            | Description   |
+| :-------------- | :-------------- | :------------ |
+| `Authorization` | ` Bearer Token` | **Required**. |
+
+| Parameter  | Type     | Description                |
+| :--------- | :------- | :------------------------- |
+| `fromDate` | `string` | **Required**.A date string |
+| `toDate`   | `string` | **Required**.A date string |
+
+## Authors
+
+- [@rohanb202](https://github.com/rohanb202)
+
+## Tech Stack
+
+**Client:** Next JS, Recoil, TailwindCSS,Material UI
+
+**Server:** Next JS built-in API routing system
+
+## Installation
+
+```bash
+npm install
+
+```
 
 ## Getting Started
 

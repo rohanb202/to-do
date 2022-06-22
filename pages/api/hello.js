@@ -1,5 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { protect } from "../../middleware/authMiddleware";
+const handler = (req, res) => {
+  return res.status(200).json({ message: "Hello world!" });
+};
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
-}
+export default protect(handler);

@@ -1,16 +1,10 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-main {
+  @apply flex items-center flex-shrink-0 px-4 py-2 space-x-2 text-white bg-black rounded-lg;
+}
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+  overflow: hidden;
 }
